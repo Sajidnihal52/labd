@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAJID MAHMUD</title>
+    <style>
+        .flex-container{
+            display: flex;
+            justify-content: center;
+        }
+        .column-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    <link rel="icon" type="image/ico" href="favicon.ico">
+</head>
+<body>
+    <center>  
+        <svg height="300" width="300"> 
+           <circle cx="150" cy="190" r="100" stroke="green" 
+              stroke-width="1" fill="favicon.png" /> 
+        </svg> 
+     <h2> SAJID MAHMUD</h2>
+    </center> 
+    <div class="flex-container">
+        <div class="column-container"> 
+            <div style="background-color: rgb(130, 160, 70);height: 500px;width: 200px;">
+                <form>
+                    <p><u>User Registration</u></p>
+                    <label for="fname">User Full Name : </label><br>
+                    <input type="text" id="fname" name="fname" value="Enter Full Name"><br>
+                    <label for="email">User Email : </label><br>
+                    <input type="text" id="email" name="email" value="example@gmail.com"><br>
+                    <label for="pass">Password : </label>
+                    <input type="password" id="pass" name="pass" minlength="8"><br>
+                    <label for="cpass">Confirm Password : </label>
+                    <input type="password" id="cpass" name="cpass" minlength="8"><br>
+                    <label for="dob">Date Of Birth :</label>
+                    <input type="date" id="dob" name="dob"><br>
+                    <label for="country">Choose a Country</label>
+                    <select id="country" name="country">
+                        <option value="ban">Bangladesh</option>
+                        <option value="ind">India</option>
+                        <option value="pak">Pakistan</option>
+                        <option value="nep">Nepal</option>
+                    </select><br>
+                    <label for="favcolor">Pick a Color</label>
+                    <input type="color" id="favcolor" name="favcolor" value="#1924C2"><br>
+                    <label for="gender"> Select your Gender : </label><br>
+                    <input type="radio" id="gender" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="gender" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                    <input type="radio" id="gender" name="gender" value="other">
+                    <label for="other">Other</label><br>
+                    <input type="checkbox" id="trems" name="terms" value="">
+                    <label for="terms"> I agree to the terms and conditions.</label><br>
+                    <a href="https://github.com/Sajidnihal52">terms and conditions</a>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div style="background-color:rgb(26, 121, 184);height: 150px;width: 200px;"></div> 
+        </div>
+        <div style="background-color: rgb(161, 33, 212);height: 650px;width: 250px;"></div>
+        </div>
+</body>
+</html>
+<!--
+<svg height="300" width="300">
+        <defs>
+            <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="200" height="200">
+                <image href="favicon.png" x="0" y="0" width="200" height="200" />
+            </pattern>
+        </defs>
+        <circle cx="150" cy="150" r="100" stroke="green" stroke-width="2" fill="url(#imagePattern)" />
+    </svg>-->
