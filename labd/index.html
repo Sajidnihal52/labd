@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SAJID MAHMUD</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <style>
+            .flex-container{
+                display: flex;
+                justify-content: center;
+            }
+            .column-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        </style>
+      
+    </head>    
+<body>
+    <center>  
+        <svg height="300" width="300">  
+              <image href="favicon.ico" x="50" y="90" width="200" height="200" />
+        </svg> 
+     <h2> SAJID MAHMUD</h2>
+    </center> 
+    <div class="flex-container">
+        <div class="column-container"> 
+            <div style="background-color: rgb(130, 160, 70);height: 500px;width: 200px;">
+                <form>
+                    <p><u>User Registration</u></p>
+                    <label for="fname">User Full Name : </label><br>
+                    <input type="text" id="fname" name="fname" value=""><br>
+                    <label for="email">User Email : </label><br>
+                    <input type="text" id="email" name="email" value=""><br>
+                    <label for="pass">Password : </label>
+                    <input type="password" id="pass" name="pass" minlength="8"><br>
+                    <label for="cpass">Confirm Password : </label>
+                    <input type="password" id="cpass" name="cpass" minlength="8"><br>
+                    <label for="dob">Date Of Birth :</label>
+                    <input type="date" id="dob" name="dob"><br>
+                    <label for="country">Choose a Country : </label>
+                    <select id="country" name="country">
+                        <option value="ban">Bangladesh</option>
+                        <option value="ind">India</option>
+                        <option value="pak">Pakistan</option>
+                        <option value="nep">Nepal</option>
+                    </select><br>
+                    <label for="favcolor">Pick a Color</label>
+                    <input type="color" id="favcolor" name="favcolor" value="#1924C2"><br>
+                    <label for="gender"> Select your Gender : </label><br>
+                    <input type="radio" id="gender" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="gender" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                    <input type="radio" id="gender" name="gender" value="other">
+                    <label for="other">Other</label><br>
+                    <input type="checkbox" id="trems" name="terms" value="">
+                    <label for="terms"> I agree to the terms and conditions.</label><br>
+                    <a href="https://github.com/Sajidnihal52">terms and conditions</a>
+                    <input type="submit" value="Submit" onclick="validateForm()">
+                </form>
+            </div>
+            <div style="background-color:rgb(26, 121, 184);height: 150px;width: 200px;"></div> 
+        </div>
+        <div style="background-color: rgb(161, 33, 212);height: 650px;width: 250px;"></div>
+        </div>
+        <script>
+            function validateForm() {
+                var name = document.getElementById("fname").value;
+                var email = document.getElementById("email").value;
+
+                var nameRegex = /^[A-Za-z\s]+$/; 
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                var passwordRegex = /^[A-Za-z0-9]+$/;
+
+                if (name === "" || email === "" || password === "" || confirmPassword === "" || dob === "" || country === "" || color === "") {
+                    alert("All fields must be filled out.");
+                    return false;
+                  }
+
+                if (!nameRegex.test(name)) {
+                    alert("Full Name must contain only letters and spaces. No numbers or special characters allowed.");
+                    return false; 
+                }
+                if (!emailRegex.test(email)) {
+                    alert("Please enter a valid email address (example@example.com).");
+                    return false;
+                  }
+                if (!genderMale && !genderFemale && !genderOther) {
+                    alert("Please select your gender.");
+                    return false;
+                  }
+                if (!terms) {
+                    alert("You must agree to the terms and conditions.");
+                    return false;
+                  }
+                  if (password.length < 8) {
+                    alert("Password must be at least 8 characters long.");
+                    return false;
+                  }
+
+                  if (!passwordRegex.test(password)) {
+                    alert("Password must contain only letters and numbers. No special characters allowed.");
+                    return false;
+                  }
+                
+                  if (password !== confirmPassword) {
+                    alert("Passwords do not match.");
+                    return false;
+                  }
+                  
+                  var today = new Date();
+                  var birthDate = new Date(dob);
+                  var age = today.getFullYear() - birthDate.getFullYear();
+                  var m = today.getMonth() - birthDate.getMonth();
+                  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                  }
+                
+                  if (age < 18) {
+                    alert("You must be at least 18 years old to register.");
+                    return false;
+                  }
+
+                else{
+                    alert("Registration Successful.");
+                    return true; 
+                }
+                
+            }
+        </script>
+</body>
+</html>
