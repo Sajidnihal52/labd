@@ -9,31 +9,56 @@
         .flex-container {
             display: flex;
             justify-content: center;
+            
         }
         .column-container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            
         }
         .circle-img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            object-fit: cover;
+            object-fit: cover; 
+        }
+        .button {
+             background-color: #12af75; 
+             border: 2px solid #341e97;
+             color: rgb(255, 255, 255);
+             padding: 5px 10px;
+             text-align: center;
+             text-decoration: azure;
+             display: inline-block;
+            font-size: 16px;
+            justify-content: right;
+            align-items: right;
+            
+        }
+        table, th, td {
+            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+            justify-content: center;
+            align-items: center;
+            border-color: #96D4D4;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <center>
+    <center>  
         <img src="favicon.ico" class="circle-img" alt="Profile Picture">
         <h2>SAJID MAHMUD</h2>
     </center>
 
     <div class="flex-container">
-        <div class="column-container">
-            <div style="background-color: rgb(130, 160, 70); height: 500px; width: 200px;">
+        <div class="column-container"> 
+            <div style="background-color: rgb(130, 160, 70); height: 500px; width: 250px;">
                 <form onsubmit="return validateForm()">
-                    <p><u>User Registration</u></p>
+                    <center><p><u>User Registration</u></p>
+                        </center>
 
                     <label for="fname">User Full Name: </label><br>
                     <input type="text" id="fname" name="fname"><br>
@@ -80,10 +105,55 @@
                 </form>
             </div>
 
-            <div style="background-color: rgb(26, 121, 184); height: 150px; width: 200px;"></div>
+            <div style="background-color: rgb(26, 121, 184); height: 180px; width: 250px;">
+                <center>
+                    <p><u>User Login</u></p>
+                </center>
+
+                <label for="email">User Email: </label><br>
+                <input type="text" id="email" name="email"><br>
+
+                <label for="pass">Password: </label><br>
+                <input type="password" id="pass" name="pass"><br>
+                <p></p>
+                <input type="submit" value="Login" class="button">
+            </div> 
         </div>
 
-        <div style="background-color: rgb(161, 33, 212); height: 650px; width: 250px;"></div>
+        <div style="background-color: rgb(161, 33, 212); height: 680px; width: 300px;">
+            <center><p>
+                <u> AQI TABLE</u>
+            </p></center>
+            <table class="table">
+                <tr>
+                    <th>City</th>
+                    <th>AQI</th>
+                </tr>
+                <tr>
+                    <td>Dhaka</td>
+                    <td>190</td>
+                </tr>
+                <tr>
+                    <td>Chittagong</td>
+                    <td>180</td>
+                </tr>
+                <tr>
+                    <td>Dhaka</td>
+                    <td>190</td>
+                </tr>
+                <tr>
+                    <td>Chittagong</td>
+                    <td>180</td>
+                </tr>  <tr>
+                    <td>Dhaka</td>
+                    <td>190</td>
+                </tr>
+                <tr>
+                    <td>Chittagong</td>
+                    <td>180</td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <script>
@@ -96,24 +166,24 @@
             var gender = document.querySelector('input[name="gender"]:checked');
             var terms = document.getElementById("terms").checked;
 
-            var nameRegex = /^[A-Za-z\s]+$/;
+            var nameRegex = /^[A-Za-z\s]+$/; 
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             var passwordRegex = /^[A-Za-z0-9]+$/;
 
             if (!nameRegex.test(name)) {
-                alert("Full Name must contain only letters and spaces.");
+                alert("Full Name must contain only letters and spaces. No numbers or special characters allowed.");
                 return false;
             }
             if (!emailRegex.test(email)) {
-                alert("Please enter a valid email address.");
+                alert("Please enter a valid email address (example@example.com).");
                 return false;
             }
             if (password.length < 8) {
-                alert("Password must be at least 8 characters.");
+                alert("Password must be at least 8 characters long.");
                 return false;
             }
             if (!passwordRegex.test(password)) {
-                alert("Password must contain only letters and numbers.");
+                alert("Password must contain only letters and numbers. No special characters allowed.");
                 return false;
             }
             if (password !== confirmPassword) {
@@ -125,7 +195,7 @@
                 return false;
             }
             if (!terms) {
-                alert("You must agree to the terms.");
+                alert("You must agree to the terms and conditions.");
                 return false;
             }
             if (dob === "") {
@@ -141,7 +211,7 @@
                 age--;
             }
             if (age < 18) {
-                alert("You must be at least 18 years old.");
+                alert("You must be at least 18 years old to register.");
                 return false;
             }
 
