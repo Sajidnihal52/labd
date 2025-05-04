@@ -4,14 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAJID MAHMUD</title>
-<<<<<<< HEAD
-    <style>
-        .flex-container{
-=======
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         .flex-container {
->>>>>>> c7e8879 (MID final)
             display: flex;
             justify-content: center;
         }
@@ -20,51 +15,22 @@
             flex-direction: column;
             align-items: center;
         }
-<<<<<<< HEAD
-    </style>
-    <link rel="icon" type="image/ico" href="favicon.ico">
-</head>
-<body>
-    <center>  
-        <svg height="300" width="300"> 
-           <circle cx="150" cy="190" r="100" stroke="green" 
-              stroke-width="1" fill="favicon.png" /> 
-        </svg> 
-     <h2> SAJID MAHMUD</h2>
-    </center> 
-    <div class="flex-container">
-        <div class="column-container"> 
-            <div style="background-color: rgb(130, 160, 70);height: 500px;width: 200px;">
-                <form>
-                    <p><u>User Registration</u></p>
-                    <label for="fname">User Full Name : </label><br>
-                    <input type="text" id="fname" name="fname" value="Enter Full Name"><br>
-                    <label for="email">User Email : </label><br>
-                    <input type="text" id="email" name="email" value="example@gmail.com"><br>
-                    <label for="pass">Password : </label>
-                    <input type="password" id="pass" name="pass" minlength="8"><br>
-                    <label for="cpass">Confirm Password : </label>
-                    <input type="password" id="cpass" name="cpass" minlength="8"><br>
-                    <label for="dob">Date Of Birth :</label>
-                    <input type="date" id="dob" name="dob"><br>
-                    <label for="country">Choose a Country</label>
-=======
         .circle-img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            object-fit: cover; 
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
-    <center>  
+    <center>
         <img src="favicon.ico" class="circle-img" alt="Profile Picture">
         <h2>SAJID MAHMUD</h2>
     </center>
 
     <div class="flex-container">
-        <div class="column-container"> 
+        <div class="column-container">
             <div style="background-color: rgb(130, 160, 70); height: 500px; width: 200px;">
                 <form onsubmit="return validateForm()">
                     <p><u>User Registration</u></p>
@@ -85,45 +51,12 @@
                     <input type="date" id="dob" name="dob"><br>
 
                     <label for="country">Choose a Country: </label><br>
->>>>>>> c7e8879 (MID final)
                     <select id="country" name="country">
                         <option value="ban">Bangladesh</option>
                         <option value="ind">India</option>
                         <option value="pak">Pakistan</option>
                         <option value="nep">Nepal</option>
                     </select><br>
-<<<<<<< HEAD
-                    <label for="favcolor">Pick a Color</label>
-                    <input type="color" id="favcolor" name="favcolor" value="#1924C2"><br>
-                    <label for="gender"> Select your Gender : </label><br>
-                    <input type="radio" id="gender" name="gender" value="male">
-                    <label for="male">Male</label><br>
-                    <input type="radio" id="gender" name="gender" value="female">
-                    <label for="female">Female</label><br>
-                    <input type="radio" id="gender" name="gender" value="other">
-                    <label for="other">Other</label><br>
-                    <input type="checkbox" id="trems" name="terms" value="">
-                    <label for="terms"> I agree to the terms and conditions.</label><br>
-                    <a href="https://github.com/Sajidnihal52">terms and conditions</a>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            <div style="background-color:rgb(26, 121, 184);height: 150px;width: 200px;"></div> 
-        </div>
-        <div style="background-color: rgb(161, 33, 212);height: 650px;width: 250px;"></div>
-        </div>
-</body>
-</html>
-<!--
-<svg height="300" width="300">
-        <defs>
-            <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="200" height="200">
-                <image href="favicon.png" x="0" y="0" width="200" height="200" />
-            </pattern>
-        </defs>
-        <circle cx="150" cy="150" r="100" stroke="green" stroke-width="2" fill="url(#imagePattern)" />
-    </svg>-->
-=======
 
                     <label for="favcolor">Pick a Color: </label><br>
                     <input type="color" id="favcolor" name="favcolor" value="#1924C2"><br>
@@ -147,7 +80,7 @@
                 </form>
             </div>
 
-            <div style="background-color: rgb(26, 121, 184); height: 150px; width: 200px;"></div> 
+            <div style="background-color: rgb(26, 121, 184); height: 150px; width: 200px;"></div>
         </div>
 
         <div style="background-color: rgb(161, 33, 212); height: 650px; width: 250px;"></div>
@@ -163,24 +96,24 @@
             var gender = document.querySelector('input[name="gender"]:checked');
             var terms = document.getElementById("terms").checked;
 
-            var nameRegex = /^[A-Za-z\s]+$/; 
+            var nameRegex = /^[A-Za-z\s]+$/;
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             var passwordRegex = /^[A-Za-z0-9]+$/;
 
             if (!nameRegex.test(name)) {
-                alert("Full Name must contain only letters and spaces. No numbers or special characters allowed.");
+                alert("Full Name must contain only letters and spaces.");
                 return false;
             }
             if (!emailRegex.test(email)) {
-                alert("Please enter a valid email address (example@example.com).");
+                alert("Please enter a valid email address.");
                 return false;
             }
             if (password.length < 8) {
-                alert("Password must be at least 8 characters long.");
+                alert("Password must be at least 8 characters.");
                 return false;
             }
             if (!passwordRegex.test(password)) {
-                alert("Password must contain only letters and numbers. No special characters allowed.");
+                alert("Password must contain only letters and numbers.");
                 return false;
             }
             if (password !== confirmPassword) {
@@ -192,7 +125,7 @@
                 return false;
             }
             if (!terms) {
-                alert("You must agree to the terms and conditions.");
+                alert("You must agree to the terms.");
                 return false;
             }
             if (dob === "") {
@@ -208,7 +141,7 @@
                 age--;
             }
             if (age < 18) {
-                alert("You must be at least 18 years old to register.");
+                alert("You must be at least 18 years old.");
                 return false;
             }
 
@@ -218,4 +151,3 @@
     </script>
 </body>
 </html>
->>>>>>> c7e8879 (MID final)
