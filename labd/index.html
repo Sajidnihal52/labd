@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAJID MAHMUD</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: center;
+        }
+        .column-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .circle-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover; 
+        }
+        .button {
+            background-color: #12af75; 
+            border: 2px solid #341e97;
+            color: white;
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        table, th, td {
+            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-color: #96D4D4;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>  
+        <img src="favicon.ico" class="circle-img" alt="Profile Picture">
+        <h2>SAJID MAHMUD</h2>
+    </center>
+
+    <div class="flex-container">
+        <div class="column-container"> 
+            <div style="background-color: rgb(130, 160, 70); height: 500px; width: 250px;">
+                <form action="process.php" method="post" onsubmit="return validateForm()">
+                    <center><p><u>User Registration</u></p></center>
+
+                    <label for="fname">User Full Name: </label><br>
+                    <input type="text" id="fname" name="fname"><br>
+
+                    <label for="email">User Email: </label><br>
+                    <input type="text" id="email" name="email"><br>
+
+                    <label for="pass">Password: </label><br>
+                    <input type="password" id="pass" name="pass"><br>
+
+                    <label for="cpass">Confirm Password: </label><br>
+                    <input type="password" id="cpass" name="cpass"><br>
+
+                    <label for="dob">Date Of Birth: </label><br>
+                    <input type="date" id="dob" name="dob"><br>
+
+                    <label for="country">Choose a Country: </label><br>
+                    <select id="country" name="country">
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="India">India</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Nepal">Nepal</option>
+                    </select><br>
+
+                    <label for="favcolor">Pick a Color: </label><br>
+                    <input type="color" id="favcolor" name="favcolor" value="#1924C2"><br>
+
+                    <label>Select your Gender: </label><br>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label><br>
+
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label><br>
+
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <label for="other">Other</label><br>
+
+                    <input type="checkbox" id="terms" name="terms">
+                    <label for="terms"> I agree to the terms and conditions.</label><br>
+
+                    <a href="https://github.com/Sajidnihal52" target="_blank">Terms and Conditions</a><br><br>
+
+                    <input type="submit" value="Submit" class="button">
+                </form>
+            </div>
+
+            <div style="background-color: rgb(26, 121, 184); height: 180px; width: 250px;">
+                <center><p><u>User Login</u></p></center>
+
+                <label for="email">User Email: </label><br>
+                <input type="text"><br>
+
+                <label for="pass">Password: </label><br>
+                <input type="password"><br><br>
+
+                <input type="submit" value="Login" class="button">
+            </div> 
+        </div>
+
+        <div style="background-color: rgb(161, 33, 212); height: 680px; width: 300px;">
+            <center><p><u> AQI TABLE</u></p></center>
+            <table>
+                <tr><th>City</th><th>AQI</th></tr>
+                <tr><td>Dhaka</td><td>190</td></tr>
+                <tr><td>Chittagong</td><td>180</td></tr>
+                <tr><td>Khulna</td><td>160</td></tr>
+                <tr><td>Rajshahi</td><td>150</td></tr>
+                <tr><td>Sylhet</td><td>140</td></tr>
+                <tr><td>Barisal</td><td>130</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("fname").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var password = document.getElementById("pass").value.trim();
+            var confirmPassword = document.getElementById("cpass").value.trim();
+            var dob = document.getElementById("dob").value.trim();
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var terms = document.getElementById("terms").checked;
+
+            var nameRegex = /^[A-Za-z\s]+$/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var passwordRegex = /^[A-Za-z0-9]+$/;
+
+            if (!nameRegex.test(name)) {
+                alert("Full Name must contain only letters and spaces.");
+                return false;
+            }
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return false;
+            }
+            if (!passwordRegex.test(password)) {
+                alert("Password must contain only letters and numbers.");
+                return false;
+            }
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            if (!gender) {
+                alert("Please select your gender.");
+                return false;
+            }
+            if (!terms) {
+                alert("You must agree to the terms and conditions.");
+                return false;
+            }
+            if (dob === "") {
+                alert("Please select your date of birth.");
+                return false;
+            }
+
+            var today = new Date();
+            var birthDate = new Date(dob);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            if (age < 18) {
+                alert("You must be at least 18 years old to register.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
