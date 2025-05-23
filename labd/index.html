@@ -96,16 +96,19 @@
             </div>
 
             <div style="background-color: rgb(26, 121, 184); height: 180px; width: 250px;">
-                <center><p><u>User Login</u></p></center>
-
-                <label for="email">User Email: </label><br>
-                <input type="text"><br>
-
-                <label for="pass">Password: </label><br>
-                <input type="password"><br><br>
-
-                <input type="submit" value="Login" class="button">
-            </div> 
+                <form action="loginprocess.php" method="post">
+                    <center><p><u>User Login</u></p></center>
+            
+                    <label for="login_email">User Email: </label><br>
+                    <input type="text" id="login_email" name="login_email"><br>
+            
+                    <label for="login_pass">Password: </label><br>
+                    <input type="password" id="login_pass" name="login_pass"><br><br>
+            
+                    <input type="submit" value="Login" class="button">
+                </form>
+            </div>
+            
         </div>
 
         <div style="background-color: rgb(161, 33, 212); height: 680px; width: 300px;">
