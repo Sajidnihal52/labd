@@ -22,11 +22,13 @@ $sql = "SELECT * FROM aqi WHERE no IN ($placeholders)";
 $result = $conn->query($sql);
 
 $bgColor = $_SESSION['color'] ?? '#f4f4f4';
+$username = $_SESSION['username'] ?? 'Guest';
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/x-icon" href="www.png">
     <title>SHOW</title>
     <style>
         body {
@@ -35,29 +37,64 @@ $bgColor = $_SESSION['color'] ?? '#f4f4f4';
             background-color: <?= htmlspecialchars($bgColor) ?>;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start;
+            min-height: 100vh;
             padding: 20px;
             box-sizing: border-box;
         }
+
         .container {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
-            max-height: 90vh;
+            max-height: 95vh;
             overflow-y: auto;
         }
-        h2 {
-            text-align: center;
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 20px;
         }
+
+        .avatar {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: bold;
+        }
+
+        .user-info a {
+            color: #1a79b8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .user-info a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            margin: 0;
+            flex: 1;
+            text-align: center;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
         }
+
         th, td {
             padding: 10px 15px;
             border: 1px solid #ccc;
@@ -67,7 +104,15 @@ $bgColor = $_SESSION['color'] ?? '#f4f4f4';
 </head>
 <body>
     <div class="container">
-        <h2>Selected City and Country</h2>
+        <div class="header">
+            <img src="download.jpg" alt="Avatar" class="avatar">
+            <h2>Selected Cities and Countries</h2>
+            <div class="user-info">
+                <span><?= htmlspecialchars($username) ?></span>
+                <a href="logoutprocess.php">Logout</a>
+            </div>
+        </div>
+
         <table>
             <tr>
                 <th>City</th>

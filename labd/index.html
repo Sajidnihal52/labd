@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAJID MAHMUD</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="www.png">
     <style>
         .flex-container {
             display: flex;
             justify-content: center;
+            margin-left: 20px;
         }
         .column-container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-left: 20px;
         }
         .circle-img {
             width: 200px;
@@ -40,88 +42,98 @@
 </head>
 <body>
     <center>  
-        <img src="favicon.ico" class="circle-img" alt="Profile Picture">
-        <h2>SAJID MAHMUD</h2>
+        <img src="logo.jpg" class="circle-img" alt="Profile Picture">
+        <h1>Air Index Quality</h1>
     </center>
 
-    <div class="flex-container">
+    <div class="flex-container">    
         <div class="column-container"> 
-            <div style="background-color: rgb(130, 160, 70); height: 500px; width: 250px;">
-                <form action="process.php" method="post" onsubmit="return validateForm()">
-                    <center><p><u>User Registration</u></p></center>
 
-                    <label for="fname">User Full Name: </label><br>
-                    <input type="text" id="fname" name="fname"><br>
+            <div style="background-color: rgb(130, 160, 70); width: 250px;height: 550px;">
+                <div style="background-color:  rgb(130, 160, 70); padding: 10px; border-radius: 8px;">
+                    <form action="process.php" method="post" onsubmit="return validateForm()">
+                        <center><p><u>User Registration</u></p></center>
 
-                    <label for="email">User Email: </label><br>
-                    <input type="text" id="email" name="email"><br>
+                        <label for="fname">User Full Name: </label><br>
+                        <input type="text" id="fname" name="fname"><br>
 
-                    <label for="pass">Password: </label><br>
-                    <input type="password" id="pass" name="pass"><br>
+                        <label for="email">User Email: </label><br>
+                        <input type="text" id="email" name="email"><br>
 
-                    <label for="cpass">Confirm Password: </label><br>
-                    <input type="password" id="cpass" name="cpass"><br>
+                        <label for="pass">Password: </label><br>
+                        <input type="password" id="pass" name="pass"><br>
 
-                    <label for="dob">Date Of Birth: </label><br>
-                    <input type="date" id="dob" name="dob"><br>
+                        <label for="cpass">Confirm Password: </label><br>
+                        <input type="password" id="cpass" name="cpass"><br>
 
-                    <label for="country">Choose a Country: </label><br>
-                    <select id="country" name="country">
-                        <option value="Bangladesh">Bangladesh</option>
-                        <option value="India">India</option>
-                        <option value="Pakistan">Pakistan</option>
-                        <option value="Nepal">Nepal</option>
-                    </select><br>
+                        <label for="dob">Date Of Birth: </label><br>
+                        <input type="date" id="dob" name="dob"><br>
 
-                    <label for="favcolor">Pick a Color: </label><br>
-                    <input type="color" id="favcolor" name="favcolor" value="#1924C2"><br>
+                        <label for="country">Choose a Country: </label><br>
+                        <select id="country" name="country">
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="India">India</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Nepal">Nepal</option>
+                        </select><br>
 
-                    <label>Select your Gender: </label><br>
-                    <input type="radio" id="male" name="gender" value="Male">
-                    <label for="male">Male</label><br>
+                        <label for="favcolor">Pick a Color: </label><br>
+                        <input type="color" id="favcolor" name="favcolor" value="#1924C2"><br>
 
-                    <input type="radio" id="female" name="gender" value="Female">
-                    <label for="female">Female</label><br>
+                        <label>Select your Gender: </label><br>
+                        <input type="radio" id="male" name="gender" value="Male">
+                        <label for="male">Male</label><br>
 
-                    <input type="radio" id="other" name="gender" value="Other">
-                    <label for="other">Other</label><br>
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label><br>
 
-                    <input type="checkbox" id="terms" name="terms">
-                    <label for="terms"> I agree to the terms and conditions.</label><br>
+                        <input type="radio" id="other" name="gender" value="Other">
+                        <label for="other">Other</label><br>
 
-                    <a href="https://github.com/Sajidnihal52" target="_blank">Terms and Conditions</a><br><br>
+                        <input type="checkbox" id="terms" name="terms">
+                        <label for="terms"> I agree to the terms and conditions.</label><br>
 
-                    <input type="submit" value="Submit" class="button">
-                </form>
+                        <a href="https://github.com/Sajidnihal52" target="_blank">Terms and Conditions</a><br><br>
+
+                        <input type="submit" value="Submit" class="button">
+                    </form>
+                </div>
             </div>
 
-            <div style="background-color: rgb(26, 121, 184); height: 180px; width: 250px;">
-                <form action="loginprocess.php" method="post">
-                    <center><p><u>User Login</u></p></center>
-            
-                    <label for="login_email">User Email: </label><br>
-                    <input type="text" id="login_email" name="login_email"><br>
-            
-                    <label for="login_pass">Password: </label><br>
-                    <input type="password" id="login_pass" name="login_pass"><br><br>
-            
-                    <input type="submit" value="Login" class="button">
-                </form>
+            <div style="background-color: rgb(26, 121, 184); width: 250px; height: 200px; ">
+                <div style="background-color: rgb(26, 121, 184); padding: 10px; border-radius: 8px;">
+                    <form action="loginprocess.php" method="post">
+                        <center><p><u>User Login</u></p></center>
+                
+                        <label for="login_email">User Email: </label><br>
+                        <input type="text" id="login_email" name="login_email"><br>
+                
+                        <label for="login_pass">Password: </label><br>
+                        <input type="password" id="login_pass" name="login_pass"><br><br>
+                
+                        <input type="submit" value="Login" class="button">
+                    </form>
+                </div>
             </div>
-            
         </div>
 
-        <div style="background-color: rgb(161, 33, 212); height: 680px; width: 300px;">
-            <center><p><u> AQI TABLE</u></p></center>
-            <table>
-                <tr><th>City</th><th>AQI</th></tr>
-                <tr><td>Dhaka</td><td>190</td></tr>
-                <tr><td>Chittagong</td><td>180</td></tr>
-                <tr><td>Khulna</td><td>160</td></tr>
-                <tr><td>Rajshahi</td><td>150</td></tr>
-                <tr><td>Sylhet</td><td>140</td></tr>
-                <tr><td>Barisal</td><td>130</td></tr>
-            </table>
+        <div style="background-color: rgb(161, 33, 212); height: 750px; width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+            <div style="margin-top: 20px; width: 90%; background-color: white; padding: 10px; border-radius: 10px;">
+                <div style="background-color: rgba(225, 22, 59, 0.5); height: 200px; width: 260px; padding: 8px; border-radius: 10px; text-align: center;">
+                    <h2 style="margin-top: 30;">Login for more!!!!</h2>
+                    <p><u>AQI</u></p>
+                </div>
+                <center><p><u>AQI TABLE</u></p></center>
+                <table>
+                    <tr><th>City</th><th>AQI</th></tr>
+                    <tr><td>Dhaka</td><td>190</td></tr>
+                    <tr><td>Chittagong</td><td>180</td></tr>
+                    <tr><td>Khulna</td><td>160</td></tr>
+                    <tr><td>Rajshahi</td><td>150</td></tr>
+                    <tr><td>Sylhet</td><td>140</td></tr>
+                    <tr><td>Barisal</td><td>130</td></tr>
+                </table>
+            </div>
         </div>
     </div>
 
