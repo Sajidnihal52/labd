@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JobConnect | Login</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .avatar-top {
+      width: 50px;
+      height: 50px;
+      margin: 20px auto 0;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0,0,0,0.15);
+    }
+    .avatar-top img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .login-wrapper {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 30px;
+      background-color: white;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-btn {
+      background-color: #888;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .back-btn:hover {
+      background-color: #666;
+    }
+
+    .register-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .register-link a {
+      color: #4361ee;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+
+    .error-msg {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script>
+    function goBack() {
+      window.location.href = "index.php";
+    }
+
+    function validateLoginForm(event) {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const userType = document.getElementById("userType").value;
+      const errorBox = document.getElementById("errorBox");
+
+      errorBox.textContent = ""; // Clear previous message
+
+      if (email === "" || password === "" || userType === "") {
+        errorBox.textContent = "Please fill out all fields.";
+        event.preventDefault(); // Stop form submission
+        return false;
+      }
+
+      // Optional: basic email format check (JS only)
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        errorBox.textContent = "Please enter a valid email address.";
+        event.preventDefault();
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+<body>
+
+  <div class="avatar-top">
+    <img src="logo.avif" alt="JobConnect Logo" />
+  </div>
+
+  <div class="login-wrapper">
+    <h3 style="text-align: center;">User Login</h3>
+
+    <div id="errorBox" class="error-msg"></div>
+
+    <form action="process_login.php" method="post" onsubmit="return validateLoginForm(event)">
+      <label for="email">Email:</label>
+      <input id="email" name="email" />
+
+      <label for="password">Password:</label>
+      <input id="password" name="password" />
+
+      <label for="userType">Login As:</label>
+      <select id="userType" name="userType">
+        <option value="">-- Select User Type --</option>
+        <option value="admin">Admin</option>
+        <option value="employer">Employer</option>
+        <option value="jobseeker">Job Seeker</option>
+      </select>
+
+      <input type="submit" value="Login" class="btn" />
+      <button type="button" class="back-btn" onclick="goBack()">Back</button>
+    </form>
+
+    <div class="register-link">
+      Don’t have an account? <a href="register.php">Register</a>
+    </div>
+  </div>
+
+</body>
+</html>
